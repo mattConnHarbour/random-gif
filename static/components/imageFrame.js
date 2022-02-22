@@ -1,17 +1,19 @@
 const imageFrame = {
-    props: ['url'],
+    props: ['url', 'loading'],
+    methods: {
+    },
     template: `<div class="image-frame">
         <!-- image container -->
         <div class="columns is-centered">
             <div class="column">
-                <b-image src="https://picsum.photos/600/400" ratio="6by4"></b-image>
+                <b-image :src="url" ratio="6by4"></b-image>
             </div>
         </div>
 
         <!-- button container -->
         <div class="columns is-centered">
             <div class="column is-narrow">
-                <b-button type="is-primary" expanded>Random GIF</b-button>
+                <b-button :loading=loading type="is-success" expanded>Random GIF</b-button>
             </div>
         </div>
 

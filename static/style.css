@@ -1,3 +1,7 @@
-.img-ctn {
-    width: 500px;
+img {
+    background-color: black;
+}
+
+.wrapper {
+    height: 100vh;
 }
