@@ -31,27 +31,20 @@
 
 <body>
     <div id="root">
-        <!-- random gif button and image ctn -->
         <div class="hero">
-            <div class="hero-body">
-
-                <!-- image container -->
-                <div class="columns is-centered">
-                    <div class="column is-half" style="border-radius: 10%;">
-                        <b-image src="https://picsum.photos/600/400" ratio="6by4"></b-image>
-                    </div>
+        <div class="hero-body">
+            <div class="columns is-centered">
+                <div class="column">
+                    <image-frame></image-frame>
                 </div>
-
-                <!-- button container -->
-                <div class="columns is-centered">
-                    <div class="column is-narrow">
-                        <b-button type="is-primary" expanded>Random GIF</b-button>
-                    </div>
+                <div class="column">
+                    <image-frame></image-frame>
                 </div>
-
-            </div> <!-- end hero body -->
+            </div>
+        </div> <!-- end hero body -->
         </div> <!-- end hero -->
-        <script src="../static/index.js" async></script>
+    </div>
+    <script type="module" src="../static/index.js" async></script>
 </body>
 
 </html>
