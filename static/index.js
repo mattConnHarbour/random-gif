@@ -7,7 +7,7 @@ Vue.component('image-frame', imageFrame)
 const app = new Vue({
     el: '#root',
     data: {
-        gifCount: 1,
+        gifCount: 3,
         gifData: [],
     },
     mounted(){
@@ -27,12 +27,27 @@ const app = new Vue({
             })
         })
     },
+    methods: {
+        updateGif(index){
+            const gif = this.gifData[index]
+            gif.loading = true
+            getImage(gifApiKey).then(url => {
+                gif.loading = false
+                gif.url = url
+            })
+        }
+    },
     template: `<div class="wrapper has-background-light">
         <div class="hero">
             <div class="hero-body">
                 <div class="columns is-centered is-flex-wrap-wrap">
-                    <div v-for="gif in gifData" class="column is-4">
-                        <image-frame :loading=gif.loading :url=gif.url></image-frame>
+                    <div v-for="(gif, i) in gifData" class="column is-4">
+                        <image-frame
+                        :loading=gif.loading
+                        :url=gif.url 
+                        :index=i
+                        @getGif=updateGif
+                        />
                     </div>
                 </div>
             </div> <!-- end hero body -->
